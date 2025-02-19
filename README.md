@@ -4,6 +4,7 @@ Simple URL sortener api backend using NodeJS and TypeScript with TypeORM (with p
 <br/> <br/>
 about:
 - uses classic controller, service, route architecture with TypeScript and TypeORM
+- Swagger API documentation 
 
 
 ## Compile and run the project
