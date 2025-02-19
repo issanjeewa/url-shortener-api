@@ -1,5 +1,18 @@
 import { IsString, Matches } from 'class-validator';
-
+/**
+ *  @swagger
+ *  components:
+ *    schemas:
+ *      CreateUrlDTO:
+ *        type: object
+ *        required:
+ *          - url
+ *        properties:
+ *          url:
+ *            type: string
+ *            description: The original URL to shorten
+ *            example: https://www.example.com
+ */
 export class CreateUrlDTO {
   @IsString()
   @Matches(

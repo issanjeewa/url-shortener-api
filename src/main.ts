@@ -1,7 +1,8 @@
 import 'dotenv/config';
 import { textSync as figlet } from 'figlet';
 import express from 'express';
-import { AppConfig, AppDataSource, DbConfig } from './configs';
+import { AppConfig, AppDataSource, swaggerSpec } from './configs';
+import swaggerUi from 'swagger-ui-express';
 
 import helloRoutes from './routes/hello.route';
 import shortUrlRoutes from './routes/short-url.route';
@@ -19,6 +20,7 @@ async function bootstrap() {
   app.use(express.json());
 
   // routes setup
+  app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   app.use('/api/hello', helloRoutes);
   app.use('/api/short', shortUrlRoutes);
 
